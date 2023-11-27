@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { Verb } from './game.model';
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
+  standalone: true,
+  imports: [FormsModule],
   styleUrls: ['./game-component.component.scss']
 })
 export class GameComponent {
@@ -171,8 +173,6 @@ export class GameComponent {
     this.verbos[63]= { traduccion:"tener puesto",             present:"wear",       sonidoPresent:"",      pastSimple:"wore",         sonidoPastSimple:"",  pastParticiple:"worn", sonidoParticiple:""};
     this.verbos[64]= { traduccion:"ganar",                    present:"win",        sonidoPresent:"",      pastSimple:"won",          sonidoPastSimple:"",  pastParticiple:"won", sonidoParticiple:""};
     this.verbos[65]= { traduccion:"escribir",                 present:"write",      sonidoPresent:"",      pastSimple:"wrote",        sonidoPastSimple:"",  pastParticiple:"written", sonidoParticiple:""};
-
-
 
   }
 }

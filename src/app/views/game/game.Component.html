@@ -1,0 +1,21 @@
+<h1>Juego de Verbos</h1>
+<h2>Verbo en Español: {{this.verbo.traduccion}}</h2>
+<label>
+  <span>Infinitivo</span><br>
+  <input type="text" [(ngModel)]="infinitivo" class="{{claseInfinitivo}}" required/>
+  <input type="button" value="sonido" id="soundPasado" (click)="reproducir(1)" [disabled]="stateDisabled">
+</label><br>
+<label>
+  <span>Pasado</span><br>
+  <input type="text" [(ngModel)]="pasado" class="{{clasePasado}}" required/>
+  <input type="button" value="sonido" id="soundPasado" (click)="reproducir(2)" [disabled]="stateDisabled">
+</label><br>
+<label>
+  <span>Participio</span><br>
+  <input type="text" [(ngModel)]="participio" class="{{claseParticipio}}" require/>
+  <input type="button" value="sonido" id="soundParticipio" (click)="reproducir(3)" [disabled]="stateDisabled">
+</label><br>
+
+<label>
+  <input type="button" (click)="comprobar()" value="Comprobar">
+</label>

@@ -1,5 +1,9 @@
-<h1>Juego de Verbos</h1>
-<h2>Verbo en Español: {{this.verbo.traduccion}}</h2>
+<div class="contenedor">
+  <div class="titulo">
+    <h1>Juego de Verbos</h1>
+  </div>
+
+<h3>Verbo en Español: {{this.verbo.traduccion}}</h3>
 <label>
   <span>Infinitivo</span><br>
   <input type="text" [(ngModel)]="infinitivo" class="{{claseInfinitivo}}" required/>
@@ -17,5 +21,7 @@
 </label><br>
 
 <label>
-  <input type="button" (click)="comprobar()" value="Comprobar">
+  <input type="button" (click)="comprobar()" value="{{botonAction}}">
 </label>
+</div>
+

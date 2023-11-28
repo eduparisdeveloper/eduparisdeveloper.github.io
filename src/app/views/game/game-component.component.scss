@@ -7,3 +7,15 @@
 .classError{
   background-color: red;
 }
+.contenedor{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.titulo{
+  background-color: burlywood;
+  width: 100%;
+  text-align: center;
+  color:white;
+}

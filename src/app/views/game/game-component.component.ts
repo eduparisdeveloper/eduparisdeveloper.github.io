@@ -20,12 +20,29 @@ export class GameComponent {
   claseInfinitivo: string="classJugando";
   clasePasado: string = "classJugando";
   claseParticipio: string = "classJugando";
+  aciertos1: number = 0;
+  aciertosFallo: number = 0;
+  aciertosPista: number = 0;
+  fallo: boolean = false;
+  pista: boolean = false;
+  estadoBoton: boolean = true;
+  verbosSaltados: number = 0;
   stateDisabled: boolean = true;
 
-
+  darPista(){
+    this.infinitivo = this.verbo.present.slice(0,1);
+    this.pista = true;
+  }
   ngOnInit() {
     this.rellenarArray();
     this.stateGame=1;//Sin empezar
+    this.maquinaDeJuego(this.stateGame);
+  }
+
+  saltarVerbo(){
+    this.stateGame = 2;
+    this.verbos.splice(this.numerolinea, 1);
+    console.log()
     this.maquinaDeJuego(this.stateGame);
   }
 
@@ -36,8 +53,9 @@ export class GameComponent {
         this.stateGame = 2;
         break;
       case 2:
-          this.cambiarEstilo(2);
+          this.limpiarCampos();
           this.cogerVerbo();
+          this.estadoBoton = false;
           this.botonAction = "Comprobar";
           this.stateGame = 3;
         break;
@@ -47,15 +65,21 @@ export class GameComponent {
         contador += this.comprobarPasado();
         contador += this.comprobarParticipio();
         if(contador == 3){
+          if(this.pista == true){
+            this.aciertosPista++;
+          }
           this.botonAction = "Siguiente";
           this.stateDisabled= false;
           this.stateGame = 2;
           this.verbos.splice(this.numerolinea, 1);
-          console.log(this.verbos);
+          if(this.fallo ==  false){
+            this.aciertos1++;
+          }else{
+            this.aciertosFallo++;
+          }
         }else{
-          console.log("Alguno esta mal");
+          this.fallo = true;
         }
-
         break;
     }
   }
@@ -71,6 +95,8 @@ export class GameComponent {
     this.claseInfinitivo = "classJugando";
     this.clasePasado = "classJugando";
     this.claseParticipio = "classJugando";
+    this.stateDisabled = true;
+    this.fallo = false;
   }
   cambiarEstilo(numero: number):string{
     if(numero == 1){
@@ -129,15 +155,22 @@ export class GameComponent {
 
 
   cogerVerbo(){
-    var numero:number = this.numeroAleatorio(this.verbos.length);
-    this.numerolinea = numero;
-    this.verbo = this.verbos[numero];
+    if(this.verbos.length > 0){
+      var numero:number = this.numeroAleatorio(this.verbos.length);
+      this.numerolinea = numero;
+      this.verbo = this.verbos[numero];
+    }else{
+      this.stateGame = 1;
+      this.maquinaDeJuego(this.stateGame);
+    }
+
   }
 
   numeroAleatorio(maximo: number):number{
     var numberRandom = Math.random()* (maximo-1);
     return Math.round(numberRandom * 1);
   }
+
   rellenarArray(){
     this.verbos[0]= { traduccion:"Ser/estar",                 present:"be",         sonidoPresent:"be__us_1.mp3",         pastSimple:"was/were",     sonidoPastSimple:"",                      pastParticiple:"been",   sonidoParticiple:""};
     this.verbos[1]= { traduccion:"Llegar a ser/ convertirse", present:"become",     sonidoPresent:"become__us_1.mp3",     pastSimple:"became",       sonidoPastSimple:"became__gb_1.mp3",      pastParticiple:"become", sonidoParticiple:""};

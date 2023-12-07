@@ -21,7 +21,24 @@
 </label><br>
 
 <label>
+  <span>
+    Aciertos a la 1º: {{aciertos1}}
+  </span><br>
+  <span>
+    Aciertos con fallos: {{aciertosFallo}}
+  </span><br>
+  <span>
+    aciertos con pistas: {{aciertosPista}}
+  </span><br>
+  <span>
+    verbos saltados: {{verbosSaltados}}
+  </span>
+</label>
+
+<label>
   <input type="button" (click)="comprobar()" value="{{botonAction}}">
+  <input type="button" value="pista" (click)="darPista()" [disabled]="estadoBoton">
+  <input type="button" value="saltar verbo" (click)="saltarVerbo()"[disabled]="estadoBoton">
 </label>
 </div>
 

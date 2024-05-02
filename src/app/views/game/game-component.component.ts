@@ -42,8 +42,8 @@ export class GameComponent {
 
   saltarVerbo(){
     this.stateGame = 2;
+    this.verbosSaltados++;
     this.verbos.splice(this.numerolinea, 1);
-    console.log()
     this.maquinaDeJuego(this.stateGame);
   }
   habilitarCampos(){

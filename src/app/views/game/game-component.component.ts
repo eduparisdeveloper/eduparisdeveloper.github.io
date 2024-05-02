@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class GameComponent {
   botonAction: string = "Empezar";
+  stateInput: boolean = true;
   stateGame: number = 0;
   numerolinea: number = 0;
   verbos: Verb[] = [];
@@ -45,7 +46,9 @@ export class GameComponent {
     console.log()
     this.maquinaDeJuego(this.stateGame);
   }
+  habilitarCampos(){
 
+  }
   maquinaDeJuego(state:number){
     switch(state){
       case 1:
@@ -53,6 +56,7 @@ export class GameComponent {
         this.stateGame = 2;
         break;
       case 2:
+          this.stateInput = false;
           this.limpiarCampos();
           this.cogerVerbo();
           this.estadoBoton = false;
@@ -79,6 +83,7 @@ export class GameComponent {
           }
         }else{
           this.fallo = true;
+          this.aciertosFallo++;
         }
         break;
     }

@@ -6,18 +6,15 @@
 <h3>Irregular Verbs</h3>
 <h3>Adivina el verbo: {{this.verbo.traduccion}}</h3>
 <label>
-  <span>Infinitivo</span><br>
-  <input type="text" [(ngModel)]="infinitivo" class="{{claseInfinitivo}}" [disabled]="stateInput" required/>
+  <input type="text" [(ngModel)]="infinitivo" class="{{claseInfinitivo}}" [disabled]="stateInput" required placeholder="Infinitivo"/>
   <input type="button" value="sonido" id="soundPasado" (click)="reproducir(1)" [disabled]="stateDisabled">
 </label><br>
 <label>
-  <span>Pasado</span><br>
-  <input type="text" [(ngModel)]="pasado" class="{{clasePasado}}" [disabled]="stateInput" required/>
+  <input type="text" [(ngModel)]="pasado" class="{{clasePasado}}" [disabled]="stateInput" required placeholder="Pasado"/>
   <input type="button" value="sonido" id="soundPasado" (click)="reproducir(2)" [disabled]="stateDisabled">
 </label><br>
 <label>
-  <span>Participio</span><br>
-  <input type="text" [(ngModel)]="participio" class="{{claseParticipio}}" require [disabled]="stateInput"/>
+  <input type="text" [(ngModel)]="participio" class="{{claseParticipio}}" require [disabled]="stateInput" placeholde="Participio"/>
   <input type="button" value="sonido" id="soundParticipio" (click)="reproducir(3)" [disabled]="stateDisabled">
 </label><br>
 

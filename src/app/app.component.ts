@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { FormsModule } from '@angular/forms';s
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -11,5 +11,5 @@ import { FormsModule } from '@angular/forms';s
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'Portafolio Edu París';
+  title = 'Portafolio Edu Paris';
 }

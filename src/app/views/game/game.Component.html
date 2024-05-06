@@ -1,10 +1,12 @@
 <div class="contenedor">
   <div class="titulo">
-    <h1>Juego de Verbos</h1>
+    <h1>Irregular Verbs</h1>
   </div>
 
-<h3>Irregular Verbs</h3>
-<h3>Adivina el verbo: {{this.verbo.traduccion}}</h3>
+
+<div *ngIf="mostrarTitulo()">
+  <h3>Adivina el verbo: {{this.verbo.traduccion}}</h3>
+</div>
 <label>
   <input type="text" [(ngModel)]="infinitivo" class="{{claseInfinitivo}}" [disabled]="stateInput" required placeholder="Infinitivo"/>
   <input type="button" value="sonido" id="soundPasado" (click)="reproducir(1)" [disabled]="stateDisabled">
@@ -14,11 +16,11 @@
   <input type="button" value="sonido" id="soundPasado" (click)="reproducir(2)" [disabled]="stateDisabled">
 </label><br>
 <label>
-  <input type="text" [(ngModel)]="participio" class="{{claseParticipio}}" require [disabled]="stateInput" placeholde="Participio"/>
+  <input type="text" [(ngModel)]="participio" class="{{claseParticipio}}" require [disabled]="stateInput" placeholder="Participio"/>
   <input type="button" value="sonido" id="soundParticipio" (click)="reproducir(3)" [disabled]="stateDisabled">
 </label><br>
 
-<label>
+<label *ngIf="this.verbos.length == 0">
   <span>
     Aciertos a la 1º: {{aciertos1}}
   </span><br>

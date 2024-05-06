@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Verb } from './game.model';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   styleUrls: ['./game-component.component.scss']
 })
 export class GameComponent {
@@ -35,15 +36,19 @@ export class GameComponent {
     this.pista = true;
   }
   ngOnInit() {
-    this.rellenarArray();
     this.stateGame=1;//Sin empezar
     this.maquinaDeJuego(this.stateGame);
   }
 
   saltarVerbo(){
-    this.stateGame = 2;
-    this.verbosSaltados++;
     this.verbos.splice(this.numerolinea, 1);
+    if(this.verbos.length != 0){
+      this.stateGame = 2;
+      this.verbosSaltados++;
+    }else{
+      this.stateGame = 4;
+      console.log("entro al 4")
+    }
     this.maquinaDeJuego(this.stateGame);
   }
   habilitarCampos(){
@@ -53,9 +58,11 @@ export class GameComponent {
     switch(state){
       case 1:
         this.botonAction = "Empezar"
+        this.rellenarArray();
         this.stateGame = 2;
         break;
       case 2:
+
           this.stateInput = false;
           this.limpiarCampos();
           this.cogerVerbo();
@@ -85,6 +92,13 @@ export class GameComponent {
           this.fallo = true;
           this.aciertosFallo++;
         }
+        break;
+        case 4:
+          console.log("aqui tambien entro");
+          this.stateInput = true;
+          this.estadoBoton = true;
+          this.stateGame = 1;
+          this.maquinaDeJuego(this.stateGame);
         break;
     }
   }
@@ -158,6 +172,13 @@ export class GameComponent {
     }
   }
 
+  mostrarTitulo(): boolean{
+    if(this.estadoBoton == true){
+      return false;
+    } else{
+      return true;
+    }
+  }
 
   cogerVerbo(){
     if(this.verbos.length > 0){

@@ -15,24 +15,50 @@ header{
   color:white;
 }
 
-.contenedor {
-  min-height: 100%;
+#contenedor {
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: 0.5fr 2fr 0.5fr;
-  grid-template-rows: 0.5fr 2fr;
+  grid-template-columns: 0.25fr 3fr 0.25fr;
+  grid-template-rows: 0.25fr 3fr;
   gap: 0px 0px;
   grid-auto-flow: column;
   grid-template-areas:
     "cabecera cabecera cabecera"
-    ". tablero .";
+    "tablero tablero tablero";
 }
 
-header { grid-area: cabecera; }
+header {
+  grid-area: cabecera;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.tablero {
+#tablero {
   grid-area: tablero;
   display:flex;
-  justify-content:center;
-  align-content:center;
+  align-items:center;
   flex-direction:column;
+ }
+
+ .SonidoActive{
+  margin-left:1rem;
+  background: linear-gradient(to bottom, rgba(102, 152, 203, 1) 0%, rgba(92, 138, 184, 1) 100%);
+  color:white;
+  border: 1px solid rgba(0, 0, 0, 0.21);
+  border-bottom: 4px solid rgba(0, 0, 0, 0.21);
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 12px;
+ }
+
+ .SonidoDisabled{
+  margin-left:1rem;
+  background: linear-gradient(to bottom, rgb(107, 106, 106) 0%, rgb(156, 156, 156) 100%);
+  color:white;
+  border: 1px solid rgba(0, 0, 0, 0.21);
+  border-bottom: 4px solid rgba(0, 0, 0, 0.21);
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 12px;
  }

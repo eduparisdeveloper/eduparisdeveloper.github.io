@@ -31,6 +31,7 @@ export class GameComponent {
   estadoBoton: boolean = true;
   verbosSaltados: number = 0;
   stateDisabled: boolean = true;
+  claseSonido = "SonidoDisabled";
 
   darPista(){
     this.infinitivo = this.verbo.present.slice(0,1);
@@ -78,11 +79,13 @@ export class GameComponent {
         contador += this.comprobarPasado();
         contador += this.comprobarParticipio();
         if(contador == 3){
+
           if(this.pista == true){
             this.aciertosPista++;
           }
           this.botonAction = "Siguiente";
           this.stateDisabled= false;
+          this.claseSonido="SonidoActive";
           this.stateGame = 2;
           this.verbos.splice(this.numerolinea, 1);
           if(this.fallo ==  false){
@@ -117,6 +120,7 @@ export class GameComponent {
     this.claseInfinitivo = "classJugando";
     this.clasePasado = "classJugando";
     this.claseParticipio = "classJugando";
+    this.claseSonido = "SonidoDisabled";
     this.stateDisabled = true;
     this.fallo = false;
   }

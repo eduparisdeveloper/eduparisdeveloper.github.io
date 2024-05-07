@@ -1,44 +1,39 @@
-<div class="contenedor">
-  <div class="titulo">
+<div id="contenedor">
+  <header id="cabecera">
     <h1>Irregular Verbs</h1>
+  </header>
+  <div id="tablero">
+      <div>
+        <h3 *ngIf="mostrarTitulo()">Adivina el verbo: {{this.verbo.traduccion}}</h3>
+      </div>
+      <label>
+        <input type="text" [(ngModel)]="infinitivo" class="{{claseInfinitivo}}" [disabled]="stateInput" required placeholder="Infinitivo"/>
+        <input type="button" value="sonido" id="soundPasado" (click)="reproducir(1)" [disabled]="stateDisabled">
+      </label><br>
+      <label>
+        <input type="text" [(ngModel)]="pasado" class="{{clasePasado}}" [disabled]="stateInput" required placeholder="Pasado"/>
+        <input type="button" value="sonido" id="soundPasado" (click)="reproducir(2)" [disabled]="stateDisabled">
+      </label><br>
+      <label>
+        <input type="text" [(ngModel)]="participio" class="{{claseParticipio}}" require [disabled]="stateInput" placeholder="Participio"/>
+        <input type="button" value="sonido" id="soundParticipio" (click)="reproducir(3)" [disabled]="stateDisabled">
+      </label>
+      <div id="botonera">
+        <label>
+          <input type="button" (click)="comprobar()" value="{{botonAction}}">
+          <input type="button" value="pista" (click)="darPista()" [disabled]="estadoBoton">
+          <input type="button" value="saltar verbo" (click)="saltarVerbo()"[disabled]="estadoBoton">
+        </label>
+      </div>
   </div>
-
-
-<div *ngIf="mostrarTitulo()">
-  <h3>Adivina el verbo: {{this.verbo.traduccion}}</h3>
+  <div id="resultado">
+    <label *ngIf="this.finalJuego == true">
+      <span>Aciertos a la 1º: {{aciertos1}}</span><br>
+      <span>Aciertos con fallos: {{aciertosFallo}}</span><br>
+      <span>aciertos con pistas: {{aciertosPista}}</span><br>
+      <span>verbos saltados: {{verbosSaltados}}</span>
+    </label>
+  </div>
 </div>
-<label>
-  <input type="text" [(ngModel)]="infinitivo" class="{{claseInfinitivo}}" [disabled]="stateInput" required placeholder="Infinitivo"/>
-  <input type="button" value="sonido" id="soundPasado" (click)="reproducir(1)" [disabled]="stateDisabled">
-</label><br>
-<label>
-  <input type="text" [(ngModel)]="pasado" class="{{clasePasado}}" [disabled]="stateInput" required placeholder="Pasado"/>
-  <input type="button" value="sonido" id="soundPasado" (click)="reproducir(2)" [disabled]="stateDisabled">
-</label><br>
-<label>
-  <input type="text" [(ngModel)]="participio" class="{{claseParticipio}}" require [disabled]="stateInput" placeholder="Participio"/>
-  <input type="button" value="sonido" id="soundParticipio" (click)="reproducir(3)" [disabled]="stateDisabled">
-</label><br>
 
-<label *ngIf="this.verbos.length == 0">
-  <span>
-    Aciertos a la 1º: {{aciertos1}}
-  </span><br>
-  <span>
-    Aciertos con fallos: {{aciertosFallo}}
-  </span><br>
-  <span>
-    aciertos con pistas: {{aciertosPista}}
-  </span><br>
-  <span>
-    verbos saltados: {{verbosSaltados}}
-  </span>
-</label>
-
-<label>
-  <input type="button" (click)="comprobar()" value="{{botonAction}}">
-  <input type="button" value="pista" (click)="darPista()" [disabled]="estadoBoton">
-  <input type="button" value="saltar verbo" (click)="saltarVerbo()"[disabled]="estadoBoton">
-</label>
-</div>
 

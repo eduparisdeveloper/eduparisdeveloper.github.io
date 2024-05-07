@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 export class GameComponent {
   botonAction: string = "Empezar";
   stateInput: boolean = true;
+  finalJuego: boolean = false;
   stateGame: number = 0;
   numerolinea: number = 0;
   verbos: Verb[] = [];
@@ -35,6 +36,7 @@ export class GameComponent {
     this.infinitivo = this.verbo.present.slice(0,1);
     this.pista = true;
   }
+
   ngOnInit() {
     this.stateGame=1;//Sin empezar
     this.maquinaDeJuego(this.stateGame);
@@ -62,7 +64,7 @@ export class GameComponent {
         this.stateGame = 2;
         break;
       case 2:
-
+          this.finalJuego = false;
           this.stateInput = false;
           this.limpiarCampos();
           this.cogerVerbo();
@@ -95,6 +97,7 @@ export class GameComponent {
         break;
         case 4:
           console.log("aqui tambien entro");
+          this.finalJuego = true;
           this.stateInput = true;
           this.estadoBoton = true;
           this.stateGame = 1;

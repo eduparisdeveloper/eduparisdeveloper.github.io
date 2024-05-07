@@ -1,9 +1,13 @@
 .menu-principal {
-  background-color: #333;
-  padding: 10px;
+  background-color: #aaaa;
 }
 
 .menu-principal ul {
+  display:flex;
+  width: 100%;
+  justify-content:space-around;
+  align-content: space-between;
+  flex-direction: row;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -20,5 +24,5 @@
 }
 
 .menu-principal a:hover {
-  background-color: #555;
+  background-color: #aaaa;
 }

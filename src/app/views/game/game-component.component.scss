@@ -7,15 +7,32 @@
 .classError{
   background-color: red;
 }
-.contenedor{
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.titulo{
+
+header{
   background-color: burlywood;
   width: 100%;
   text-align: center;
   color:white;
 }
+
+.contenedor {
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 0.5fr;
+  grid-template-rows: 0.5fr 2fr;
+  gap: 0px 0px;
+  grid-auto-flow: column;
+  grid-template-areas:
+    "cabecera cabecera cabecera"
+    ". tablero .";
+}
+
+header { grid-area: cabecera; }
+
+.tablero {
+  grid-area: tablero;
+  display:flex;
+  justify-content:center;
+  align-content:center;
+  flex-direction:column;
+ }

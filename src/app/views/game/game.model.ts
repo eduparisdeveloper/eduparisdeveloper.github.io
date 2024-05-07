@@ -7,3 +7,5 @@ export interface Verb{
   pastParticiple: string,
   sonidoParticiple: string
 }
+
+

@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1715119352785,
+  "timestamp": 1715157246822,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main-7YDYMDCV.js",
+        "/main-B6YDEASU.js",
         "/manifest.webmanifest",
         "/polyfills-LZBJRJJE.js",
         "/styles-UVZPE7FB.css"
@@ -96,6 +96,7 @@
         "/assets/audios/infinitivo/wear__gb_1.mp3",
         "/assets/audios/infinitivo/win__gb_1.mp3",
         "/assets/audios/infinitivo/write__gb_1.mp3",
+        "/assets/audios/participio/understood__gb_1.mp3",
         "/assets/audios/pasado/ate__gb_1.mp3",
         "/assets/audios/pasado/became__gb_1.mp3",
         "/assets/audios/pasado/began__gb_1.mp3",
@@ -243,6 +244,7 @@
     "/assets/audios/infinitivo/wear__gb_1.mp3": "84110b4609da6a2deb8b7bdab1066149412099b3",
     "/assets/audios/infinitivo/win__gb_1.mp3": "c2ae93d94032b391e1e3339c7415e2186d4be431",
     "/assets/audios/infinitivo/write__gb_1.mp3": "5ac769393ff3ca922bdf0c10f6f8e29152e9c3a5",
+    "/assets/audios/participio/understood__gb_1.mp3": "cb0cf32b9852b6108c423e4a4f5ac78c64482cdc",
     "/assets/audios/pasado/ate__gb_1.mp3": "f84ee1071df400392e3fe94f32bc84576d85a865",
     "/assets/audios/pasado/became__gb_1.mp3": "d35aec5416dc26a3d6a884b8965f93a295175690",
     "/assets/audios/pasado/began__gb_1.mp3": "fc241bf9e742e0de9c73f42fdba993568c035bf6",
@@ -317,8 +319,8 @@
     "/assets/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
     "/assets/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
     "/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
-    "/index.html": "a34ea1e6ed783d4765a9180f03b2613fb1a7f366",
-    "/main-7YDYMDCV.js": "6998fc874d28dc23a3d264d389e6f07c84ffed68",
+    "/index.html": "bf0890e121617ea0b0590902e2fb08e1518056d5",
+    "/main-B6YDEASU.js": "e5aac0888af1532725de48cdec332914d3589622",
     "/manifest.webmanifest": "f31680331a1f90b2e78b522e903b96a1c34037dc",
     "/polyfills-LZBJRJJE.js": "fda1c82c5c620f1fa442f687b3df45a037f6fcc9",
     "/styles-UVZPE7FB.css": "8d6eeb01bedd93bb6ced1c24c2375cf7cb4e6325"

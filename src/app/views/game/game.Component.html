@@ -3,7 +3,7 @@
     <h1>Irregular Verbs</h1>
   </header>
   <div id="tablero">
-      <div>
+      <div class="tituloJuego">
         <h3 *ngIf="mostrarTitulo()">Adivina el verbo: {{this.verbo.traduccion}}</h3>
       </div>
       <label>
@@ -19,11 +19,10 @@
         <input type="button" value="sonido" id="soundParticipio" (click)="reproducir(3)" [disabled]="stateDisabled" class="{{claseSonido}}">
       </label>
       <div id="botonera">
-        <label>
-          <input type="button" (click)="comprobar()" value="{{botonAction}}">
-          <input type="button" value="pista" (click)="darPista()" [disabled]="estadoBoton">
-          <input type="button" value="saltar verbo" (click)="saltarVerbo()" [disabled]="estadoBoton">
-        </label>
+          <input type="button" class="{{btnFunc}}"(click)="comprobar()" value="{{botonAction}}">
+          <input type="button" class="{{btnPista}}" value="pista" (click)="darPista()" [disabled]="estadoBoton">
+          <input type="button" class="{{btnSaltar}}" value="saltar verbo" (click)="saltarVerbo()" [disabled]="estadoBoton">
+
       </div>
 
       <div id="resultado">

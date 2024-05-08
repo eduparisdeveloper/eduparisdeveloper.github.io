@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
   imports: [FormsModule, CommonModule],
   styleUrls: ['./game-component.component.scss']
 })
+
 export class GameComponent {
   botonAction: string = "Empezar";
   stateInput: boolean = true;
@@ -31,7 +32,10 @@ export class GameComponent {
   estadoBoton: boolean = true;
   verbosSaltados: number = 0;
   stateDisabled: boolean = true;
-  claseSonido = "SonidoDisabled";
+  claseSonido: string = "SonidoDisabled";
+  btnSaltar: string = "btnDisabled";
+  btnFunc: string = "btnFuncActive";
+  btnPista: string = "btnDisabled";
 
   darPista(){
     this.infinitivo = this.verbo.present.slice(0,1);
@@ -50,7 +54,6 @@ export class GameComponent {
       this.verbosSaltados++;
     }else{
       this.stateGame = 4;
-      console.log("entro al 4")
     }
     this.maquinaDeJuego(this.stateGame);
   }
@@ -70,6 +73,8 @@ export class GameComponent {
           this.limpiarCampos();
           this.cogerVerbo();
           this.estadoBoton = false;
+          this.btnPista = "btnPistaActive";
+          this.btnSaltar = "btnSaltarcActive";
           this.botonAction = "Comprobar";
           this.stateGame = 3;
         break;
@@ -103,6 +108,8 @@ export class GameComponent {
           this.finalJuego = true;
           this.stateInput = true;
           this.estadoBoton = true;
+          this.btnPista = "btnDisabled";
+          this.btnSaltar = "btnDisabled";
           this.stateGame = 1;
           this.maquinaDeJuego(this.stateGame);
         break;

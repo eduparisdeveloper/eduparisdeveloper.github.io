@@ -8,4 +8,8 @@ export interface Verb{
   sonidoParticiple: string
 }
 
-
+export enum estados {
+	Empezar,
+	Comprobar,
+	Siguiente,
+}

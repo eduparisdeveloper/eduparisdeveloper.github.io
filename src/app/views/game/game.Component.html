@@ -8,20 +8,20 @@
       </div>
       <label>
         <input type="text" [(ngModel)]="infinitivo" class="{{claseInfinitivo}}" [disabled]="stateInput" required placeholder="Infinitivo"/>
-        <input type="button" value="sonido" id="soundPasado" (click)="reproducir(1)" [disabled]="stateDisabled" class="{{claseSonido}}">
+        <input type="button" value="sonido" id="soundPasado" (click)="reproducir(1)" [disabled]="stateDisabled" [ngClass]="stateDisabled == true?'SonidoDisabled':'SonidoActive'">
       </label><br>
       <label>
         <input type="text" [(ngModel)]="pasado" class="{{clasePasado}}" [disabled]="stateInput" required placeholder="Pasado"/>
-        <input type="button" value="sonido" id="soundPasado" (click)="reproducir(2)" [disabled]="stateDisabled" class="{{claseSonido}}">
+        <input type="button" value="sonido" id="soundPasado" (click)="reproducir(2)" [disabled]="stateDisabled" [ngClass]="stateDisabled == true?'SonidoDisabled':'SonidoActive'">
       </label><br>
       <label>
         <input type="text" [(ngModel)]="participio" class="{{claseParticipio}}" require [disabled]="stateInput" placeholder="Participio"/>
-        <input type="button" value="sonido" id="soundParticipio" (click)="reproducir(3)" [disabled]="stateDisabled" class="{{claseSonido}}">
+        <input type="button" value="sonido" id="soundParticipio" (click)="reproducir(3)" [disabled]="stateDisabled" [ngClass]="stateDisabled == true?'SonidoDisabled':'SonidoActive'">
       </label>
       <div id="botonera">
-          <input type="button" class="{{btnFunc}}"(click)="comprobar()" value="{{botonAction}}">
-          <input type="button" class="{{btnPista}}" value="pista" (click)="darPista()" [disabled]="estadoBoton">
-          <input type="button" class="{{btnSaltar}}" value="saltar verbo" (click)="saltarVerbo()" [disabled]="estadoBoton">
+          <input type="button" class="btnFuncActive" (click)="comprobar()" value="{{botonAction}}">
+          <input type="button"  [ngClass]="estadoBoton === true ? 'btnDisabled' : 'btnPistaActive'" value="pista" (click)="darPista()" [disabled]="estadoBoton"/>
+          <input type="button"  [ngClass]="estadoBoton === true ? 'btnDisabled' : 'btnSaltarcActive'" value="saltar verbo" (click)="saltarVerbo()" [disabled]="estadoBoton">
 
       </div>
 

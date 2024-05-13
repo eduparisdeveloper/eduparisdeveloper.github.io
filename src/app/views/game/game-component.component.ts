@@ -36,6 +36,7 @@ export class GameComponent {
   btnSaltar: string = "btnDisabled";
   btnFunc: string = "btnFuncActive";
   btnPista: string = "btnDisabled";
+  fallado: boolean  = false;
 
   darPista(){
     this.infinitivo = this.verbo.present.slice(0,1);
@@ -104,7 +105,6 @@ export class GameComponent {
         }
         break;
         case 4:
-          console.log("aqui tambien entro");
           this.finalJuego = true;
           this.stateInput = true;
           this.estadoBoton = true;
@@ -162,7 +162,6 @@ export class GameComponent {
     const audio = new Audio();
     switch(caso){
       case 1:
-        console.log(this.verbo.sonidoPresent);
         audio.src = "../../../assets/audios/infinitivo/"+ this.verbo.sonidoPresent;
       break;
       case 2:
@@ -230,7 +229,7 @@ export class GameComponent {
     this.verbos[15]= { traduccion:"beber",                    present:"drink",      sonidoPresent:"drink__us_1.mp3",      pastSimple:"drank",        sonidoPastSimple:"drank__gb_1.mp3",       pastParticiple:"drunk", sonidoParticiple:""};
     this.verbos[16]= { traduccion:"conducir",                 present:"drive",      sonidoPresent:"drive__us_1.mp3",      pastSimple:"drove",        sonidoPastSimple:"drove__gb_1.mp3",       pastParticiple:"driven", sonidoParticiple:""};
     this.verbos[17]= { traduccion:"comer",                    present:"eat",        sonidoPresent:"eat__us_1.mp3",        pastSimple:"ate",          sonidoPastSimple:"ate__gb_1.mp3",         pastParticiple:"eaten", sonidoParticiple:""};
-    this.verbos[18]= { traduccion:"caer",                     present:"fall",       sonidoPresent:"fall__us_1.mp3",       pastSimple:"fell",         sonidoPastSimple:"fell__gb_1.mp3",        pastParticiple:"fllen", sonidoParticiple:""};
+    this.verbos[18]= { traduccion:"caer",                     present:"fall",       sonidoPresent:"fall__us_1.mp3",       pastSimple:"fallen",         sonidoPastSimple:"fell__gb_1.mp3",        pastParticiple:"fllen", sonidoParticiple:""};
     this.verbos[19]= { traduccion:"sentir",                   present:"feel",       sonidoPresent:"feel_us_1.mp3",        pastSimple:"felt",         sonidoPastSimple:"felt__gb_1.mp3",        pastParticiple:"felt", sonidoParticiple:""};
     this.verbos[20]= { traduccion:"encontrar",                present:"find",       sonidoPresent:"find__us_1.mp3",       pastSimple:"found",        sonidoPastSimple:"found__gb_1.mp3",       pastParticiple:"found", sonidoParticiple:""};
     this.verbos[21]= { traduccion:"volar",                    present:"fly",        sonidoPresent:"fly__us_1.mp3",        pastSimple:"flew",         sonidoPastSimple:"flew__gb_1.mp3",        pastParticiple:"flown", sonidoParticiple:""};

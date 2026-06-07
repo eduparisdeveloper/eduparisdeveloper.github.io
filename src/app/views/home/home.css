@@ -1,0 +1,110 @@
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+}
+
+body{
+background:#0f172a;
+color:white;
+line-height:1.6;
+}
+
+/* NAV */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+position:sticky;
+top:0;
+background:rgba(15,23,42,0.8);
+backdrop-filter:blur(10px);
+}
+
+.logo{
+font-size:20px;
+font-weight:700;
+letter-spacing:1px;
+color:white;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+opacity:.8;
+transition:.3s;
+}
+
+nav a:hover{
+opacity:1;
+}
+
+/* HERO */
+
+.hero{
+min-height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:0 10%;
+background:
+radial-gradient(circle at 20% 20%,#1e3a8a 0%,transparent 40%),
+radial-gradient(circle at 80% 30%,#7c3aed 0%,transparent 40%),
+radial-gradient(circle at 50% 80%,#2563eb 0%,transparent 40%);
+}
+
+.hero h1{
+font-size:40px;
+padding-bottom:30px;
+padding-top:30px;
+margin-bottom:20px;
+background:linear-gradient(90deg,#0c305d,#534480);
+background-clip:text;
+color:transparent;
+}
+
+.hero p{
+max-width:600px;
+margin:auto;
+font-size:18px;
+opacity:.8;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 30px;
+border-radius:8px;
+background:linear-gradient(90deg,#3b82f6,#8b5cf6);
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:40px;
+}
+
+nav{
+flex-direction:column;
+gap:10px;
+}
+
+}

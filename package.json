@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href /eudparisdeveloper/eduparisdeveloper.github.io/ --output-path dist/eduparisdeveloper.github.io",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:eduparisdeveloper.github.io": "node dist/eduparisdeveloper.github.io/server/server.mjs"
